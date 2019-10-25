@@ -537,4 +537,13 @@
 
 <div class="container">
   <div class="row"></div>
-</div>
+</div><!--
+<app-first></app-first> &lt;!&ndash; выводим компонент first &ndash;&gt;
+<app-second></app-second> &lt;!&ndash; выводим компонент second &ndash;&gt;-->
+<app-person-view (delPerson)="on_del_person($event)"
+                 (editPerson)="on_edit_person($event)"
+                 [inPerson]="person"
+                 *ngFor="let person of persons">
+</app-person-view>
+<hr>
+<app-person-add (addperson)="on_add_person($event)"></app-person-add>

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2 pt-2">{{inPerson.id}}
+    </div>
+    <div class="col-4 pt-2">{{inPerson.firstname}}
+    </div>
+    <div class="col-4 pt-2">{{inPerson.lastname}}
+    </div>
+    <div class="col-2">
+      <div class="btn-group m-1">
+        <button class="btn btn-primary" (click)="toggle_edit()">Edit</button>
+        <button class="btn btn-danger" (click)="on_del_person()">Del</button>
+      </div>
+    </div>
+
+    <div *ngIf="edit_flag">
+      <div class="col mt-2">
+        <input type="text" class="form-control" placeholder="First Name" #inputFirstname>
+      </div>
+      <div class="col mt-2">
+
+        <input type="text" class="form-control" placeholder="Last Name" #inputLastname>
+      </div>
+      <div class="col-12 mt-2">
+        <button class="btn btn-primary" (click)="on_edit_person(inputFirstname.value, inputLastname.value)">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
