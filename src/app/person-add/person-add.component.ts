@@ -17,9 +17,11 @@ export class PersonAddComponent implements OnInit {
   test(elm) {
     console.log(elm);
   }
-  on_add_person(firstname: string = "Name", lastname: string = "Surname") {
-    let person = new Person(firstname, lastname);
-    this.addperson.emit(person);
+  on_add_person(firstname: string, lastname: string) {
+    if (firstname !== "" && lastname !== "") { /* запрещаем добавлять пустые строки */
+      let person = new Person(firstname, lastname);
+      this.addperson.emit(person);
+    }
 
   }
 }

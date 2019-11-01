@@ -22,9 +22,11 @@ export class PersonViewComponent implements OnInit {
     this.delPerson.emit(this.inPerson.id);
   }
   on_edit_person (firstname: string = this.inPerson.firstname, lastname: string = this.inPerson.lastname) {
-    let ed_person = new Person(firstname, lastname, this.inPerson.id);
-    this.editPerson.emit(ed_person);
-    this.toggle_edit();
+    if (firstname !== "" && lastname !== "") {
+      let ed_person = new Person(firstname, lastname, this.inPerson.id);
+      this.editPerson.emit(ed_person);
+      this.toggle_edit();
+    }
   }
   toggle_edit () {
     this.edit_flag = !this.edit_flag;
