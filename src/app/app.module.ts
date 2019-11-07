@@ -7,6 +7,8 @@ import { PersonAddComponent } from './person-add/person-add.component';
 import {FormsModule} from "@angular/forms";
 import {ReactiveFormsModule} from "@angular/forms";
 import {NgxMaskModule} from "ngx-mask";
+import { AppFirstnameFilterPipe } from './shared/pipes/app-firstname-filter.pipe';
+import { AppLastnameFilterPipe } from './shared/pipes/app-lastname-filter.pipe';
 
 // export const options: Partial<IConfig> | (() => Partial<IConfig>);
 
@@ -15,7 +17,9 @@ import {NgxMaskModule} from "ngx-mask";
   declarations: [
     AppComponent,
     PersonViewComponent,
-    PersonAddComponent
+    PersonAddComponent,
+    AppFirstnameFilterPipe,
+    AppLastnameFilterPipe
   ],
   imports: [
     BrowserModule,

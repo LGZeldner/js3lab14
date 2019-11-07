@@ -8,6 +8,10 @@ import {Person} from "./shared/models/person.model";
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'Компоненты';
+  firstname_filter: boolean;
+  search_firstname = "";
+  search_lastname = "";
+  lastname_filter: boolean;
   persons: Person[] = [];
   constructor() { /* в конструкторе не очень хорошо проводить инициализации */
     console.log("Constructor");
@@ -16,12 +20,18 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void { /* лучше инициализировать здесь */
     // console.log("init");
     this.persons.push(new Person("First", "Firstsmth", "+4", 1));
-    this.persons.push(new Person("First", "Firstsmth", "+5", 2));
-    this.persons.push(new Person("First", "Firstsmth", "+8", 3));
-    this.persons.push(new Person("First", "Firstsmth", "+9", 4));
+    this.persons.push(new Person("Second", "Secondsmth", "+5", 2));
+    this.persons.push(new Person("Third", "Thirdsmth", "+8", 3));
+    this.persons.push(new Person("Fourth", "Fourthsmth", "+9", 4));
   }
 
   ngOnDestroy(): void {
+  }
+  toggle_lastname_filter() {
+    this.lastname_filter = !this.lastname_filter;
+  }
+  toggle_firstname_filter() {
+    this.firstname_filter = !this.firstname_filter;
   }
   on_add_person (person: Person) {
     person.id = (this.persons.length)

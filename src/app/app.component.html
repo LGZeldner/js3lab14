@@ -535,15 +535,16 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<div class="container">
-  <div class="row"></div>
-</div><!--
-<app-first></app-first> &lt;!&ndash; выводим компонент first &ndash;&gt;
-<app-second></app-second> &lt;!&ndash; выводим компонент second &ndash;&gt;-->
+<div class="btn-group m-1">
+  <button class="btn btn-primary" (click)="toggle_lastname_filter()">Фильтр по фамилии</button>
+  <button class="btn btn-primary" (click)="toggle_firstname_filter()">Фильтр по имени</button>
+</div>
+<input type="text" [(ngModel)]="search_firstname" class="form-control" *ngIf="firstname_filter">
+<input type="text" [(ngModel)]="search_lastname" class="form-control" *ngIf="lastname_filter">
 <app-person-view (delPerson)="on_del_person($event)"
                  (editPerson)="on_edit_person($event)"
                  [inPerson]="person"
-                 *ngFor="let person of persons">
+                 *ngFor="let person of persons | appFirstnameFilter:search_firstname | appLastnameFilter:search_lastname">
 </app-person-view>
 <hr>
 <app-person-add (addperson)="on_add_person($event)"></app-person-add>
