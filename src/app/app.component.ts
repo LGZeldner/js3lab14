@@ -15,10 +15,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void { /* лучше инициализировать здесь */
     // console.log("init");
-    this.persons.push(new Person("First", "Firstsmth", 1));
-    this.persons.push(new Person("First", "Firstsmth", 2));
-    this.persons.push(new Person("First", "Firstsmth", 3));
-    this.persons.push(new Person("First", "Firstsmth", 4));
+    this.persons.push(new Person("First", "Firstsmth", "+4", 1));
+    this.persons.push(new Person("First", "Firstsmth", "+5", 2));
+    this.persons.push(new Person("First", "Firstsmth", "+8", 3));
+    this.persons.push(new Person("First", "Firstsmth", "+9", 4));
   }
 
   ngOnDestroy(): void {

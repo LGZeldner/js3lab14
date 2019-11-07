@@ -2,9 +2,11 @@
   <div class="row">
     <div class="col-2 pt-2">{{inPerson.id}}
     </div>
-    <div class="col-4 pt-2">{{inPerson.firstname}}
+    <div class="col-3 pt-2">{{inPerson.firstname}}
     </div>
-    <div class="col-4 pt-2">{{inPerson.lastname}}
+    <div class="col-3 pt-2">{{inPerson.lastname}}
+    </div>
+    <div class="col-2 pt-2">{{inPerson.phone}}
     </div>
     <div class="col-2">
       <div class="btn-group m-1">
@@ -12,18 +14,24 @@
         <button class="btn btn-danger" (click)="on_del_person()">Del</button>
       </div>
     </div>
+    <form [formGroup]="editForm">
+      <div class="row mt-2" *ngIf="edit_flag">
+        <div class="col-4">
+          <input type="text" formControlName="firstname" class="form-control" placeholder="First Name">
+        </div>
+        <div class="col-4">
 
-    <div *ngIf="edit_flag">
-      <div class="col mt-2">
-        <input type="text" class="form-control" placeholder="First Name" #inputFirstname>
-      </div>
-      <div class="col mt-2">
+          <input type="text" formControlName="lastname" class="form-control" placeholder="Last Name">
+        </div>
+        <div class="col-2">
 
-        <input type="text" class="form-control" placeholder="Last Name" #inputLastname>
+          <input type="text" type="text" mask="(000) 000-0000" prefix="+7" [showMaskTyped]="true" formControlName="phone" class="form-control">
+        </div>
+
+        <div class="col-2"><!--inputFirstname.value, inputLastname.value, inputPhone.value-->
+          <button [disabled]="editForm.invalid" class="btn btn-primary" (click)="on_edit_person()">Save</button>
+        </div>
       </div>
-      <div class="col-12 mt-2">
-        <button class="btn btn-primary" (click)="on_edit_person(inputFirstname.value, inputLastname.value)">Save</button>
-      </div>
-    </div>
+    </form>
   </div>
 </div>

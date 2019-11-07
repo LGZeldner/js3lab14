@@ -4,6 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PersonViewComponent } from './person-view/person-view.component';
 import { PersonAddComponent } from './person-add/person-add.component';
+import {FormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from "@angular/forms";
+import {NgxMaskModule} from "ngx-mask";
+
+// export const options: Partial<IConfig> | (() => Partial<IConfig>);
+
 
 @NgModule({
   declarations: [
@@ -12,7 +18,10 @@ import { PersonAddComponent } from './person-add/person-add.component';
     PersonAddComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgxMaskModule.forRoot(/*options*/)
   ],
   providers: [],
   bootstrap: [AppComponent]
