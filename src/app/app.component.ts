@@ -29,9 +29,11 @@ export class AppComponent implements OnInit, OnDestroy {
   }
   toggle_lastname_filter() {
     this.lastname_filter = !this.lastname_filter;
+    this.search_lastname = "";
   }
   toggle_firstname_filter() {
     this.firstname_filter = !this.firstname_filter;
+    this.search_firstname = "";
   }
   on_add_person (person: Person) {
     person.id = (this.persons.length)

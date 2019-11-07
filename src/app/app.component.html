@@ -534,13 +534,27 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<div class="btn-group m-1">
-  <button class="btn btn-primary" (click)="toggle_lastname_filter()">Фильтр по фамилии</button>
-  <button class="btn btn-primary" (click)="toggle_firstname_filter()">Фильтр по имени</button>
+<div class="container">
+  <h3>Фильтры</h3>
+  <div class="row mt-2">
+    <div class="col-2">
+      <button class="btn btn-primary btn-block" (click)="toggle_lastname_filter()">Фамилия</button>
+    </div>
+    <div class="col-10">
+      <input type="text" [(ngModel)]="search_lastname" class="form-control" *ngIf="lastname_filter">
+    </div>
+  </div>
+  <div class="row mt-2 mb-1">
+    <div class="col-2">
+      <button class="btn btn-primary btn-block" (click)="toggle_firstname_filter()">Имя</button>
+    </div>
+    <div class="col-10">
+      <input type="text" [(ngModel)]="search_firstname" class="form-control" *ngIf="firstname_filter">
+    </div>
+  </div>
 </div>
-<input type="text" [(ngModel)]="search_firstname" class="form-control" *ngIf="firstname_filter">
-<input type="text" [(ngModel)]="search_lastname" class="form-control" *ngIf="lastname_filter">
+
+
 <app-person-view (delPerson)="on_del_person($event)"
                  (editPerson)="on_edit_person($event)"
                  [inPerson]="person"
