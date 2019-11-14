@@ -1,0 +1,31 @@
+{
+  "persons": [
+    {
+      "id": 1,
+      "firstname": "First",
+      "lastname": "Firstsmth",
+      "phone": "+7(900) 111-1111"
+    },
+    {
+      "id": 2,
+      "firstname": "Second",
+      "lastname": "Secondsmth",
+      "phone": "+7(900) 111-1112"
+    },
+    {
+      "id": 3,
+      "firstname": "Third",
+      "lastname": "Thirdsmth",
+      "phone": "+7(900) 111-1113"
+    },
+    {
+      "id": 4,
+      "firstname": "Fourth",
+      "lastname": "Fourthsmth",
+      "phone": "+7(900) 111-1114"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

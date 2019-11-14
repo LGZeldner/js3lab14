@@ -9,6 +9,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {NgxMaskModule} from "ngx-mask";
 import { AppFirstnameFilterPipe } from './shared/pipes/app-firstname-filter.pipe';
 import { AppLastnameFilterPipe } from './shared/pipes/app-lastname-filter.pipe';
+import {HttpClientModule} from "@angular/common/http";
 
 // export const options: Partial<IConfig> | (() => Partial<IConfig>);
 
@@ -25,7 +26,8 @@ import { AppLastnameFilterPipe } from './shared/pipes/app-lastname-filter.pipe';
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxMaskModule.forRoot(/*options*/)
+    NgxMaskModule.forRoot(/*options*/),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
