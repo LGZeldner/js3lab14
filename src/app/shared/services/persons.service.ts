@@ -13,7 +13,7 @@ export class PersonsService extends BaseApi {
     this.header = new HttpHeaders();
     this.header.set ('Content-type', 'application/json');
   }
-  getPersons () {
+  async getPersons () {
     return this.get (this.url, this.header).toPromise();
   }
   postPersons (data) {
